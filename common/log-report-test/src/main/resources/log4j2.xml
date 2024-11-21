@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="INFO" >
+	<Properties>
+	<Property name="filePath">/app/war/grayscale/package/logs</Property>
+	</Properties>
+
+	<springProperty scope="context" name="ip" source="spring.cloud.client.ipAddress" />
+
+	<!-- test for package -->
+	<Loggers>
+<!--		<AsyncLogger name="kafkaLogger" level="INFO" additivity="false" includeLocation="false">-->
+<!--			<AppenderRef ref="Kafka"/>-->
+<!--		</AsyncLogger>-->
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="Async"/>
+		</Root>
+	</Loggers>
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%traceId]  [%X{logId}] [%thread] [%5p] - %c -%F(%L) -%m%n"/>
+		</Console>
+		<Kafka name="Kafka" topic = "java_logs_logToKafka">
+<!--			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%X{traceId}] [%X{logId}] [%thread] [%5p] [ ${sys:POD_IP}] - %c -%F(%L) -%m%n " />-->
+
+			<K8SLogLayout charset="UTF-8" type="k8s" server="grayscale" pattern="%d{yyyy-MM-dd HH:mm:ss} [%traceId] [%X{logId}] [%thread] [%5p] [ ${sys:POD_IP}] - %c -%F(%L) -%m%n " />
+			<Property name="bootstrap.servers">${env:LOG_KAFKA_BROKER:-10.1.2.64:9092}</Property>
+			<property name="timeout.ms">2000</property>
+		</Kafka>
+
+		<Async name="Async">
+			<AppenderRef ref="Kafka"/>
+		</Async>
+	</Appenders>
+</Configuration>
