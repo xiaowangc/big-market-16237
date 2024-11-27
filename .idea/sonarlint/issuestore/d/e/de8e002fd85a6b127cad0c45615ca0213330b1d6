@@ -1,0 +1,7 @@
+
+›
+java:S1130"yRemove the declaration of thrown exception 'java.lang.ClassNotFoundException', as it cannot be thrown from method's body.(•­Ð–úÿÿÿÿ8¨ÿÔ–µ2
+›
+java:S1130"yRemove the declaration of thrown exception 'java.lang.InstantiationException', as it cannot be thrown from method's body.(•­Ð–úÿÿÿÿ8¨ÿÔ–µ2
+›
+java:S1130"yRemove the declaration of thrown exception 'java.lang.IllegalAccessException', as it cannot be thrown from method's body.(•­Ð–úÿÿÿÿ8¨ÿÔ–µ2

@@ -1,0 +1,5 @@
+META-INF/spring-configuration-metadata.json
+com/chige/config/ThreadPoolConfig.class
+com/chige/config/GuavaConfig.class
+com/chige/config/ThreadPoolConfigProperties.class
+com/chige/Application.class
