@@ -78,3 +78,5 @@ F
 big-market-api/pom.xml,1/b/1b9946df163c99619532cc2a066b98e3bd116980
 
 Obig-market-app/src/main/java/com/chige/controller/RaffleActivityController.java,d/1/d14de38011c4ddec3987f3feba8f96dec9a4d1ab
+W
+'big-market-domain/big-market-domain.iml,c/1/c137468cae3940bc165aee894ae575278fceb06a
